@@ -1,0 +1,12 @@
+@echo off
+set i=1
+:loop
+start cmd
+set /a i+=1
+set /a screensize = %errorlevel% %2
+if %screensize% geq 32767 (
+    goto end
+)
+timeout /t 1
+goto loop
+:end
